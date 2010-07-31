@@ -21,7 +21,7 @@ void insertionSort(vector<uint32_t> &array)
       uint32_t key = array[j];
       uint32_t i = j - 1;
       // move elements to the right
-      while ( (i >= 0) & (array[i] < key))
+      while ( (i >= 0) & (array[i] > key))
         {
           array[i + 1] = array[i];
           i--;
@@ -30,6 +30,7 @@ void insertionSort(vector<uint32_t> &array)
       array[i + 1] = key;
     }
 }
+
 
 void printArray(vector<uint32_t> &array)
 {
