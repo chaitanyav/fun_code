@@ -14,12 +14,21 @@
 
 using namespace std;
 
-void insertionSort(vector<uint32_t> &array)
+void printArray(vector<int32_t> &array)
 {
-  for (uint32_t j = 1; j < array.size(); j++)
+  for (int32_t i = 0; i < array.size(); i++)
     {
-      uint32_t key = array[j];
-      uint32_t i = j - 1;
+      cout << array[i] << " ";
+    }
+  cout << endl;
+}
+
+void insertionSort(vector<int32_t> &array)
+{
+  for (int32_t j = 1; j < array.size(); j++)
+    {
+      int32_t key = array[j];
+      int32_t i = j - 1;
       // move elements to the right
       while ( (i >= 0) & (array[i] > key))
         {
@@ -28,39 +37,29 @@ void insertionSort(vector<uint32_t> &array)
         }
       // insert the element into its right place
       array[i + 1] = key;
-    }
-}
-
-
-void printArray(vector<uint32_t> &array)
-{
-  for (uint32_t i = 0; i < array.size(); i++)
-    {
-      cout << array[i] << endl;
+      cout << "Iteration: " << endl;
+      printArray(array);
     }
 }
 
 int main()
 {
-  uint32_t n = 0;
-  vector<uint32_t> array;
+  int32_t n = 0;
+  int32_t num = 0;
+  vector<int32_t> array;
 
   cout << "Enter the number of elements" << endl;
   cin >> n;
 
   cout << "Enter the elements" << endl;
 
-  for (uint32_t i = 0; i < n; i++)
+  for (int32_t i = 0; i < n; i++)
     {
-      uint32_t num = 0;
       cin >> num;
       array.push_back(num);
     }
 
   insertionSort(array);
-
-  printArray(array);
-
   return 0;
 }
 

@@ -40,8 +40,8 @@ int32_t Partition(vector<int32_t> &array, int32_t low, int32_t high) {
 void QuickSort(vector<int32_t> &array, int32_t low, int32_t high) {
   if(low < high) {
     int32_t pivot = Partition(array, low, high);
-    //PrintArray(array);
-    //cout << "Pivot is: " << pivot << endl;
+    cout << "Pivot is: " << pivot << endl;
+    PrintArray(array);
     QuickSort(array, low, pivot - 1);
     QuickSort(array, pivot + 1, high);
   }
@@ -51,6 +51,7 @@ void QuickSort(vector<int32_t> &array, int32_t low, int32_t high) {
 int main()
 {
   int32_t n = 0;
+  int32_t temp = 0;
   vector<int32_t> array;
 
   cout << "Enter the number of elements" << endl;
@@ -60,15 +61,10 @@ int main()
   cout << " ** Enter the elements of the array **" << endl;
   for (int32_t index = 0; index < n; index++)
     {
-      int32_t temp = 0;
       cin >> temp;
       array.push_back(temp);
     }
 
   QuickSort(array, 0, n - 1);
-
-  cout << "Sorted array elements:" << endl;
-  PrintArray(array);
-
   return 0;
 }

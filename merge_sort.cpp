@@ -73,6 +73,7 @@ void MergeSort(vector<int32_t> &array, int32_t low, int32_t high)
 int main()
 {
   int32_t n = 0;
+  int32_t temp = 0;
   vector<int32_t> array;
 
   cout << "Enter the number of elements" << endl;
@@ -82,7 +83,6 @@ int main()
   cout << " ** Enter the elements of the array **" << endl;
   for (int32_t index = 0; index < n; index++)
     {
-      int32_t temp = 0;
       cin >> temp;
       array.push_back(temp);
     }
