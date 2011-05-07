@@ -18,7 +18,7 @@ int32_t IterativeBinarySearch(vector<int32_t> &array, int32_t search_key)
   int32_t low = 0, mid = 0, high = 0;
   high = array.size();
 
-  while (low < high)
+  while (low <= high)
     {
       mid = (low + high) / 2;
       if (search_key == array[mid])
@@ -63,6 +63,11 @@ int main()
   cout << "Enter the number of elements" << endl;
   cin >> n;
 
+  if(n < 1) {
+    cout << "number of elements cannot be zero" << endl;
+    exit(0);
+  }
+
 // read the elements
   cout << " ** Enter the elements of the array in sorted order **" << endl;
   for (int32_t index = 0; index < n; index++)
@@ -75,8 +80,8 @@ int main()
   cout << "Enter the element to search for" << endl;
   cin >> search_key;
 
-  cout << IterativeBinarySearch(array, search_key) << endl;
+  cout << "Postion using Interative Binary Search: " << IterativeBinarySearch(array, search_key) << endl;
 
-  cout << RecursiveBinarySearch(array, search_key, 0, array.size());
+  cout << "Postion using Recursive Binary Search: " << RecursiveBinarySearch(array, search_key, 0, array.size());
   return 0;
 }
