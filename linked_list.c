@@ -14,6 +14,7 @@ void insert(struct Node **head, int data, int position) {
 
   if(newNode == NULL) {
     printf("Memory could be allocated\n");
+    return;
   }
 
   newNode->data = data;
