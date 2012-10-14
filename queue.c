@@ -1,15 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-struct Node {
-	int data;
-	struct Node *next;
-};
-
-struct Queue {
-	struct Node *front;
-	struct Node *rear;
-};
+#include "queue.h"
 
 struct Queue* createQueue() {
 	struct Queue *queue = (struct Queue *)malloc(sizeof(struct Queue));
