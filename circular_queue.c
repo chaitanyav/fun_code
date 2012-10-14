@@ -37,7 +37,7 @@ int isQueueFull(struct CircularQueue * queue) {
 }
 
 int sizeOfQueue(struct CircularQueue *queue) {
-	return ((queue->size - queue->front - queue->rear + 1) % queue->size);
+	return ((queue->size - queue->front + queue->rear + 1) % queue->size);
 }
 
 void enqueue(struct CircularQueue *queue, int data) {
